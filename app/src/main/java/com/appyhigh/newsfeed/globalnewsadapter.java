@@ -1,6 +1,7 @@
 package com.appyhigh.newsfeed;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,9 @@ public class globalnewsadapter extends RecyclerView.Adapter<globalnewsadapter.Vi
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext,news.get(position).getUrl(),Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(mContext,WebV.class);
+                intent.putExtra("webview",news.get(position).getUrl());
+                mContext.startActivity(intent);
             }
         });
     }
