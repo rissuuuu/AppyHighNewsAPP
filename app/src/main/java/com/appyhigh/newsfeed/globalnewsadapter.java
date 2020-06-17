@@ -19,7 +19,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class globalnewsadapter extends RecyclerView.Adapter<globalnewsadapter.ViewHolder> {
-     Context mContext;
+    private Context mContext;
     LayoutInflater inflater;
     List<News> news;
 
@@ -47,6 +47,7 @@ public class globalnewsadapter extends RecyclerView.Adapter<globalnewsadapter.Vi
             public void onClick(View v) {
                 Intent intent=new Intent(mContext,WebV.class);
                 intent.putExtra("webview",news.get(position).getUrl());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
             }
         });
