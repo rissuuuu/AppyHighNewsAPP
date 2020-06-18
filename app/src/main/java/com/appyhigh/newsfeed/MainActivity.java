@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    int time=2000;
+    int time=1000;
 
     private RequestQueue mQueue;
     @Override

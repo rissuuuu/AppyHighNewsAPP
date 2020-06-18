@@ -15,6 +15,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,6 +36,8 @@ public class Global extends AppCompatActivity {
     RecyclerView recyclerView;
     List<News> addnews;
     globalnewsadapter globalnewsadapter;
+    AdView adView,mAdview;
+    InterstitialAd interstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +45,16 @@ public class Global extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
         getSupportActionBar().hide();
         setContentView(R.layout.activity_global);
-
+        mAdview = findViewById(R.id.ad_view);
+        mAdview.bringToFront();
         recyclerView = findViewById(R.id.recyclerviewglobal);
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdview.loadAd(adRequest);
         addnews = new ArrayList<>();
         mQueue = Volley.newRequestQueue(this);
         jsonParse("us");
+//        interstitialAd.show();
     }
 
     private void jsonParse(String country) {
