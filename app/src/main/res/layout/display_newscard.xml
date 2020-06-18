@@ -12,14 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="400dp">
         <TextView
-            android:padding="2dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:id="@+id/id_title"
             android:layout_gravity="center"
             android:textColor="#000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="............"
+            android:textSize="18sp"
+            android:text=""
             android:textStyle="bold"
             />
         <ImageView
@@ -28,9 +29,11 @@
             android:layout_height="250dp"
             />
         <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:id="@+id/id_description"
             android:textColor="#000"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
