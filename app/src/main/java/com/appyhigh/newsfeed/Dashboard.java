@@ -34,7 +34,6 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     Location gps_loc = null, network_loc = null, final_loc = null;
     LocationManager locationManager;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
