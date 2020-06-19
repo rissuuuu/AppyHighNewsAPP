@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-2408394501642057/6463679538">
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewglobal"

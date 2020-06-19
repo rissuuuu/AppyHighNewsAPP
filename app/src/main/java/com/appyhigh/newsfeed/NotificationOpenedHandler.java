@@ -11,10 +11,10 @@ import com.onesignal.OneSignal;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ExampleNotificationOpenedHandler implements OneSignal.NotificationOpenedHandler {
+public class NotificationOpenedHandler implements OneSignal.NotificationOpenedHandler {
     Context mycontext;
 
-    ExampleNotificationOpenedHandler(Context context) {
+    NotificationOpenedHandler(Context context) {
         mycontext= context;
     }
     @Override

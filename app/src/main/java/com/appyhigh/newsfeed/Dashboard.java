@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
-import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -33,9 +31,9 @@ import java.util.Locale;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener,LocationListener {
     CardView global, countries;
-
-    Location gps_loc = null, network_loc = null, final_loc = null;
+    Location locationa,gps_loc = null, network_loc = null, final_loc = null;
     LocationManager locationManager;
+    static String loc="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +47,9 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
                 .unsubscribeWhenNotificationsAreDisabled(true)
                 .setInAppMessageClickHandler(null)
-                .setNotificationOpenedHandler(new ExampleNotificationOpenedHandler(this))
+                .setNotificationOpenedHandler(new NotificationOpenedHandler(this))
                 .init();
+
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(getApplicationContext(),
                 android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -58,6 +57,8 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                     android.Manifest.permission.ACCESS_COARSE_LOCATION}, 101);
         }
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        getLocation.locationEnabled();
+//        getLocation.getLoc();
         locationEnabled();
         getLocation();
         global = findViewById(R.id.id_global);
@@ -165,6 +166,9 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onBackPressed() {
 
+    }
+    public void setloc(String str){
+        loc=str;
     }
 
 }
