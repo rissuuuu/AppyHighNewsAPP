@@ -70,7 +70,9 @@ public class Country_news extends AppCompatActivity {
                         addnews = new ArrayList<>();
                         jsonParse("us");
                         return true;
-                    case R.id.id_china:
+                    case R.id.id_germany:
+                        addnews = new ArrayList<>();
+                        jsonParse("de");
                         return true;
                     case R.id.id_nepal:
                         return true;

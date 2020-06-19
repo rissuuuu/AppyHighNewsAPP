@@ -31,9 +31,9 @@ import java.util.Locale;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener,LocationListener {
     CardView global, countries;
-    Location locationa,gps_loc = null, network_loc = null, final_loc = null;
+    Location gps_loc = null, network_loc = null, final_loc = null;
     LocationManager locationManager;
-    static String loc="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +57,6 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                     android.Manifest.permission.ACCESS_COARSE_LOCATION}, 101);
         }
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-//        getLocation.locationEnabled();
-//        getLocation.getLoc();
         locationEnabled();
         getLocation();
         global = findViewById(R.id.id_global);
@@ -166,9 +164,6 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onBackPressed() {
 
-    }
-    public void setloc(String str){
-        loc=str;
     }
 
 }
